@@ -4,7 +4,7 @@ Implementation of Stack and Queue (circular queue) data structures in Pharo.
 Testing Stack code in Playground 
 (attaching images for reference)
 
-![Screenshot 2025-04-04 102250](https://github.com/user-attachments/assets/71ce568b-5310-4eb5-aa74-b01691f3835c)
+![image](https://github.com/user-attachments/assets/9c13c73f-4a89-40d2-ab12-dfa340c17f8e)
 
 Output
 
