@@ -18,6 +18,14 @@ Output
 
 ![Screenshot 2025-04-04 105930](https://github.com/user-attachments/assets/e2a1c9f9-b139-4812-a8f1-74ebb4101af4)
 
+# Warshall Algorithm
+Implementation of Warshall algorithm to find transitive closure
+
+![Screenshot 2025-04-05 190357](https://github.com/user-attachments/assets/13070173-a69e-46dd-8a9d-641a6e799d02)
+
+
+Reference: [CLRS](https://enos.itcollege.ee/~japoia/algorithms/GT/Introduction_to_algorithms-3rd%20Edition.pdf)
+
 
 Work in progress as of now.
 I might add the Pharo implementation of more data structures and some other basic beginner level programs that I used to write in JAVA.
