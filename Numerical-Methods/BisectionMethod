@@ -1,0 +1,87 @@
+Class {
+    #name : 'BisectionMethod',
+    #superclass : 'Object',
+    #instVars : [
+        'function',
+        'lowerBound',
+        'upperBound',
+        'precision',
+        'maxIterations',
+        'result'
+    ],
+    #category : 'NumericalMethods',
+    #package : 'NumericalMethods'
+}
+
+{ #category : 'initialization' }
+BisectionMethod >> initialize [
+    super initialize.
+    precision := 0.0001.
+    maxIterations := 100.
+]
+
+{ #category : 'accessing' }
+BisectionMethod >> function: aBlock [
+    "Set function of which you want to find the root of"
+    function := aBlock.
+]
+
+{ #category : 'accessing' }
+BisectionMethod >> setBounds: lowerValue and: upperValue [
+    "Set the bounds for the interval"
+    lowerBound := lowerValue.
+    upperBound := upperValue.
+
+    "Ensure the function changes sign between bounds"
+    (function value: lowerBound) * (function value: upperBound) > 0 ifTrue: [
+        self error: 'Function must change sign between bounds'.
+    ].
+]
+
+{ #category : 'accessing' }
+BisectionMethod >> precision: aNumber [
+    "Set precision"
+    precision := aNumber.
+]
+
+{ #category : 'accessing' }
+BisectionMethod >> maxIterations: anInteger [
+    "Set maximum number of iterations"
+    maxIterations := anInteger.
+]
+
+{ #category : 'algorithm' }
+BisectionMethod >> solve [
+    "Find root of function using bisection method"
+    | a b midpoint fMid iterations |
+    
+    a := lowerBound.
+    b := upperBound.
+    iterations := 0.
+
+    [ (b - a) > precision and: [iterations < maxIterations] ] whileTrue: [
+        midpoint := (a + b) / 2.
+        fMid := function value: midpoint.
+
+        "Check root is found"
+        fMid abs < precision ifTrue: [
+            result := midpoint.
+            ^ result.
+        ].
+
+        "Determine which half contains the root"
+        (function value: a) * fMid < 0
+            ifTrue: [ b := midpoint ]
+            ifFalse: [ a := midpoint ].
+
+        iterations := iterations + 1.
+    ].
+
+    result := (a + b) / 2.
+    ^ result
+]
+
+{ #category : 'printing' }
+BisectionMethod >> printResult [
+    Transcript show: 'Root found at x = '; show: (result roundTo: precision) printString; cr.
+]
