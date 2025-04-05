@@ -24,7 +24,7 @@ Implementation of Warshall algorithm to find transitive closure
 ![Screenshot 2025-04-05 190357](https://github.com/user-attachments/assets/13070173-a69e-46dd-8a9d-641a6e799d02)
 
 
-Reference: [CLRS](https://enos.itcollege.ee/~japoia/algorithms/GT/Introduction_to_algorithms-3rd%20Edition.pdf), My [notes](https://drive.google.com/drive/folders/1kgTZxJ3Xs5Nc8BI4iKMp9VlRL_XnlQIu) from Discrete Mathematics
+Reference: [CLRS](https://enos.itcollege.ee/~japoia/algorithms/GT/Introduction_to_algorithms-3rd%20Edition.pdf), My [notes](https://drive.google.com/file/d/1ko-DJnVQ_KjcK-AJde8TmnM1H0-agcNg/view?usp=sharing) from Discrete Mathematics
 
 
 Work in progress as of now.
