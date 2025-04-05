@@ -10,24 +10,22 @@ Class {
 
 { #category : 'initialization' }
 Warshall >> initialize [
-    "Initialize with empty adjacency matrix"
     super initialize.
     adjacencyMatrix := #().
 ]
 
 { #category : 'initialization' }
 Warshall >> setMatrix: aMatrix [
-    "Set the adjacency matrix for the algorithm"
+    "Set adjacency matrix for the algo"
     adjacencyMatrix := aMatrix.
 ]
 
 { #category : 'algorithm' }
 Warshall >> findTransitiveClosure [
-    "Compute the transitive closure using Warshall's algorithm"
+    "find transitive closure using Warshall's algo"
     | n result |
     n := adjacencyMatrix size.
     
-    "Create a mutable copy of the matrix"
     result := Array new: n.
     1 to: n do: [:i |
         result at: i put: ((adjacencyMatrix at: i) copy).
@@ -36,7 +34,6 @@ Warshall >> findTransitiveClosure [
     1 to: n do: [:k |
         1 to: n do: [:i |
             1 to: n do: [:j |
-                "Using proper Pharo syntax for nested arrays"
                 (result at: i) at: j put: 
                     ((result at: i) at: j) | 
                     (((result at: i) at: k) & ((result at: k) at: j)).
@@ -49,7 +46,6 @@ Warshall >> findTransitiveClosure [
 
 { #category : 'printing' }
 Warshall >> printMatrix: aMatrix [
-    "Print the matrix to Transcript"
     Transcript cr; show: 'Matrix:'; cr.
     aMatrix do: [ :row |
         Transcript show: row printString; cr.
