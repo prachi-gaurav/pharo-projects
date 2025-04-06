@@ -1,0 +1,71 @@
+Class {
+    #name : 'LagrangeInterpolation',
+    #superclass : 'Object',
+    #instVars : [
+        'points'
+    ],
+    #category : 'NumericalMethods-Interpolation',
+    #package : 'NumericalMethods-Interpolation'
+}
+
+{ #category : 'initialization' }
+LagrangeInterpolation >> initialize [
+    super initialize.
+    points := OrderedCollection new.
+]
+
+{ #category : 'accessing' }
+LagrangeInterpolation >> addPoint: xValue and: yValue [
+    points add: (Array with: xValue with: yValue).
+]
+
+{ #category : 'accessing' }
+LagrangeInterpolation >> setPoints: pointsCollection [
+    "map the x,y points"
+    points := pointsCollection.
+]
+
+{ #category : 'accessing' }
+LagrangeInterpolation >> points [
+    ^ points
+]
+
+{ #category : 'algorithm' }
+LagrangeInterpolation >> interpolateAt: xValue [
+    "to find y value at a given x"
+    | result term |
+    
+    points isEmpty ifTrue: [ self error: 'No datapoint available for interpolation' ].
+    
+    result := 0.
+    1 to: points size do: [ :i |
+        | xi yi |
+        xi := (points at: i) first.
+        yi := (points at: i) second.
+        
+        term := 1.0.
+        1 to: points size do: [ :j |
+            i = j ifFalse: [
+                | xj |
+                xj := (points at: j) first.
+                term := term * ((xValue - xj) / (xi - xj)).
+            ].
+        ].
+        
+        "Multiply with y & add to result"
+        result := result + (term * yi).
+    ].
+    ^ result
+]
+
+{ #category : 'printing' }
+LagrangeInterpolation >> printResultFor: xValue [
+    | result |
+    result := self interpolateAt: xValue.
+    Transcript 
+        show: 'Interpolated value at x = '; 
+        show: xValue printString; 
+        show: ' is y = '; 
+        show: result printString; 
+        cr.
+]
