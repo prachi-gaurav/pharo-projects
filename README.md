@@ -26,12 +26,12 @@ Implementation of Warshall algorithm to find transitive closure
 # Bisection Method
 Implementation of Bisection Method to find root of an equation
 
-![Screenshot 2025-04-05 211757](https://github.com/user-attachments/assets/45b2c417-4d83-457c-8ddf-9ee5896d8c90)
+![image](https://github.com/user-attachments/assets/3569e100-5e88-45f7-8d29-2ced26c5d7a9)
 
 # Lagrange's Interpolation
 Implementation of Lagrange's Interpolation to estimate the value of a function at any point within a certain range
 
-![Screenshot 2025-04-06 193250](https://github.com/user-attachments/assets/22945643-6962-4441-a388-08d787ac0eda)
+![image](https://github.com/user-attachments/assets/bc62cacf-90e4-4ff8-b056-7ee553a57ce6)
 
 
 
