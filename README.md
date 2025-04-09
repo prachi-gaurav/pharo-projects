@@ -41,4 +41,4 @@ Reference: [CLRS](https://enos.itcollege.ee/~japoia/algorithms/GT/Introduction_t
 Work in progress as of now.
 I might add the Pharo implementation of more data structures and algorithms or some other basic beginner level programs that I used to write in JAVA.
 Next topics to implement:
-> Bubble sort, Newton Raphson method, Breadth First Search
+> Bubble sort, Newton Raphson method, Breadth First Search, Depth First Search
